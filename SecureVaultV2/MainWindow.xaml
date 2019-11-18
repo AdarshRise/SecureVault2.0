@@ -11,6 +11,8 @@
         ShowTitle="True"
         Height="450" 
         Width="800">
+    <!-- Top Menu Items-->
+    <!--
     <hc:Window.NonClientAreaContent>
         <StackPanel Height="29">
             <Menu HorizontalAlignment="Left">
@@ -32,7 +34,15 @@
             </Menu>
         </StackPanel>
     </hc:Window.NonClientAreaContent>
+    
+    -->
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.296,1.557" StartPoint="0.641,-0.21">
+                <GradientStop Color="Black" Offset="0.011"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
     </Grid>
 </hc:Window>
