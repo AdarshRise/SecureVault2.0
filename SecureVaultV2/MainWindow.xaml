@@ -53,8 +53,22 @@
                 <RowDefinition Height="0.35*" />
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
-            <Label Grid.Row="0" VerticalAlignment="Center"  Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Content="Secure Vault" />
+            <hc:OutlineText  Text="Secure Vault" FontSize="72" Fill="White"  Stroke="Black" StrokeThickness="0.5" FontFamily="Trajan Pro"  Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <hc:OutlineText.Effect>
+                    <DropShadowEffect/>
+                </hc:OutlineText.Effect>
+                
+            </hc:OutlineText>
+                <!--
+            <Label Grid.Row="0" VerticalAlignment="Center" Width="100" Height="100" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center"   >
+                <Label.Content>
+                    <
+                </Label.Content>
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            -->
         </Grid>
 
     </Grid>
