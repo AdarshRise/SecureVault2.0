@@ -45,6 +45,11 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button x:Name="Close_But" Style="{StaticResource ButtonInfo}" Click="Close_But_Click" Content="This is Test" Height="50" Width="100">
+                
+            </Button>
+        </Grid>
         <Grid Height="auto" Width="auto" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />

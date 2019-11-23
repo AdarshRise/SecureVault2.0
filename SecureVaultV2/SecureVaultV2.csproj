@@ -93,5 +93,19 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CloseOpen\BlueButton16.png" />
+    <Resource Include="Assets\CloseOpen\BlueButton24.png" />
+    <Resource Include="Assets\CloseOpen\Close2Button16.png" />
+    <Resource Include="Assets\CloseOpen\Close2Button24.png" />
+    <Resource Include="Assets\CloseOpen\CloseButton16.png" />
+    <Resource Include="Assets\CloseOpen\CloseButton24.png" />
+    <Resource Include="Assets\CloseOpen\GreenButton16.png" />
+    <Resource Include="Assets\CloseOpen\GreenButton24.png" />
+    <Resource Include="Assets\CloseOpen\GreyButton16.png" />
+    <Resource Include="Assets\CloseOpen\GreyButton24.png" />
+    <Resource Include="Assets\CloseOpen\MinimizeButton16.png" />
+    <Resource Include="Assets\CloseOpen\MinimizeButton24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
