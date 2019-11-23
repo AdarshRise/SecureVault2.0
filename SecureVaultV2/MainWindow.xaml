@@ -45,11 +45,21 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Button x:Name="Close_But" Style="{StaticResource ButtonInfo}" Click="Close_But_Click" Content="This is Test" Height="50" Width="100">
-                
+        
+        
+        <Grid VerticalAlignment="Top" >
+            <Button x:Name="Close_But" Style="{StaticResource ButtonInfo}" Margin="0 0 0 0" Background="Transparent" Cursor="Hand" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Close_But_Click"  Height="25" Width="32">
+                <Button.Content>
+                    <Image  Source=".\Assets\CloseOpen\Close2Button24.png"/>
+                </Button.Content>
+            </Button>
+            <Button x:Name="Min_But" Style="{StaticResource ButtonInfo}" Margin="0 0 26 0"  Cursor="Hand" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Min_But_Click"  Height="25" Width="32">
+                <Button.Content>
+                    <Image Source=".\Assets\CloseOpen\MinimizeButton24.png"/>
+                </Button.Content>
             </Button>
         </Grid>
+
         <Grid Height="auto" Width="auto" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />

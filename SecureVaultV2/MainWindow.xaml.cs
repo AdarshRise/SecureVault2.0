@@ -6,6 +6,8 @@ using HandyControl.Expression;
 using HandyControl.Media.Animation;
 using HandyControl.Properties.Langs;
 using HandyControl.Interactivity;
+using System;
+
 //using MessageBox = HandyControl.Controls.MessageBox;
 using MessageBoxResult = System.Windows.MessageBoxResult;
 
@@ -20,8 +22,23 @@ namespace SecureVaultV2
 
         private void Close_But_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            
+            var val = MessageBox.Ask("Shutting down in 3 2 1....", "End");
 
+            //System.Windows.MessageBoxResult.OK;
+
+           // MessageBox.Show(val.ToString(), "The Val");
+           // MessageBox.Show(val.GetType().ToString(), "The Val");
+            if (val == MessageBoxResult.OK)
+            {
+                System.Windows.Application.Current.Shutdown();
+            }
+          
+            
+            GC.Collect();
+            
+            
+            
+            /*
             MessageBox.Show("This is great","Show");
             var val = MessageBox.Ask("This is great", "Ask");
 
@@ -42,7 +59,14 @@ namespace SecureVaultV2
             MessageBox.Fatal("This is great", "Fatal");
             MessageBox.Warning("This is great", "Warning");
             MessageBox.Success("This is great", "Success");
- 
+            */
+            
+        }
+
+        private void Min_But_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            // System.Windows.Application.Current.;
+            WindowState = System.Windows.WindowState.Minimized;
         }
     }
 }
