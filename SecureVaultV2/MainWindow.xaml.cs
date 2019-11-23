@@ -6,7 +6,8 @@ using HandyControl.Expression;
 using HandyControl.Media.Animation;
 using HandyControl.Properties.Langs;
 using HandyControl.Interactivity;
-using MessageBox = HandyControl.Controls.MessageBox;
+//using MessageBox = HandyControl.Controls.MessageBox;
+using MessageBoxResult = System.Windows.MessageBoxResult;
 
 namespace SecureVaultV2
 {
@@ -19,16 +20,29 @@ namespace SecureVaultV2
 
         private void Close_But_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            MessageBox.Ask("This is great");
-            MessageBox.Show(new MessageBoxInfo
+            
+
+            MessageBox.Show("This is great","Show");
+            var val = MessageBox.Ask("This is great", "Ask");
+
+            //System.Windows.MessageBoxResult.OK;
+
+            MessageBox.Show(val.ToString(), "The Val");
+            MessageBox.Show(val.GetType().ToString(), "The Val");
+            if(val==MessageBoxResult.OK)
             {
-                MessageBoxText = "Ask",
-                Caption = "Title",
-                Button = MessageBoxButton.YesNo, 
-                IconBrushKey = ResourceToken.AccentBrush,
-                IconKey = ResourceToken.AskGeometry,
-                Style = ResourceHelper.GetResource<Style>("MessageBoxCustom")
-            });
+                MessageBox.Show("It Was OK");
+            }
+            if (val==MessageBoxResult.Cancel)
+            {
+                MessageBox.Show("It Was Cancel");
+            }
+            MessageBox.Error("This is great", "Error");
+            MessageBox.Info("This is great", "Info");
+            MessageBox.Fatal("This is great", "Fatal");
+            MessageBox.Warning("This is great", "Warning");
+            MessageBox.Success("This is great", "Success");
+ 
         }
     }
 }
