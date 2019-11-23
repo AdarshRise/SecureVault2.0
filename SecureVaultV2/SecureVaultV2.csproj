@@ -107,5 +107,149 @@
     <Resource Include="Assets\CloseOpen\MinimizeButton16.png" />
     <Resource Include="Assets\CloseOpen\MinimizeButton24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImage96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideImage\HideImageBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-icon96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HideMessage\HideMessage-iconBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePassword96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HidePassword\HidePasswordBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-icon96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Privacy\privacy-iconBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\TWB\TWB_NoBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-icon96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault\Vault-iconBig.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
