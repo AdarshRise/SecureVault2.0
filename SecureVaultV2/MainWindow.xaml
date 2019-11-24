@@ -76,58 +76,66 @@
                 </hc:OutlineText.Effect>
             </hc:OutlineText>
 
-
-
-            <hc:Carousel IsCenter="True" AutoRun="True" Grid.Row="1" Background="Transparent" HorizontalAlignment="Left" Height="261.6" Margin="479.6,30.4,0,0" VerticalAlignment="Top" Width="274.4">
-                <Image Width="274.4" Height="261.6" Source="./Assets/Vault/Vault-iconBig.png"/>
-                <Grid Width="274.4">
-                    <Image Width="274.4" Height="261.6" Source="./Assets/Privacy/privacy-iconBig.png"/>
-                    <!--
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <hc:Carousel IsCenter="True" AutoRun="True" Grid.Column="0" Grid.Row="0" Background="Transparent" HorizontalAlignment="Center" Height="261.6"  VerticalAlignment="Center" Width="274.4">
+                    <Image Width="274.4" Height="261.6" Source="./Assets/Vault/Vault-iconBig.png"/>
+                    <Grid Width="274.4">
+                        <Image Width="274.4" Height="261.6" Source="./Assets/Privacy/privacy-iconBig.png"/>
+                        <!--
                 <TextBlock x:Name="TB_Privacy" Text="Privacy" Style="{StaticResource TextBlockLargeBold}">
                     <TextBlock.Effect>
                         <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
                     </TextBlock.Effect>
                 </TextBlock>
                 -->
-                    <hc:OutlineText VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold"  StrokeThickness=".5" FontSize="25" Text="Content" Fill="Black" Stroke="White">
-                        <hc:OutlineText.Effect>
-                            <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
-                        </hc:OutlineText.Effect>
-                    </hc:OutlineText>
-                </Grid>
-                <Grid Width="274.4">
-                    <Image Width="274.4" Height="261.6" Source="./Assets/HidePassword/HidePasswordBig.png"/>
-                    <!--
+                        <hc:OutlineText VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold"  StrokeThickness=".5" FontSize="25" Text="Content" Fill="Black" Stroke="White">
+                            <hc:OutlineText.Effect>
+                                <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                            </hc:OutlineText.Effect>
+                        </hc:OutlineText>
+                    </Grid>
+                    <Grid Width="274.4">
+                        <Image Width="274.4" Height="261.6" Source="./Assets/HidePassword/HidePasswordBig.png"/>
+                        <!--
                 <TextBlock x:Name="textBlock" Text="Password" Style="{StaticResource TextBlockLargeBold}">
                     <TextBlock.Effect>
                         <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
                       </TextBlock.Effect>
                 </TextBlock>
                 -->
-                    <hc:OutlineText x:Name="textBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold"  StrokeThickness="0.9" FontSize="25" Text="Password" Fill="Black" Stroke="White">
-                        <hc:OutlineText.Effect>
-                            <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
-                        </hc:OutlineText.Effect>
-                    </hc:OutlineText>
-                </Grid>
-                <Grid Width="274.4">
-                    <Image Width="274.4" Height="261.6" Source="./Assets/HideMessage/HideMessage-iconBig.png"/>
-                    <TextBlock x:Name="TB_Message" Margin="0 60 0 0" Text="Message" Style="{StaticResource TextBlockLargeBold}">
-                        <TextBlock.Effect>
-                            <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
-                </Grid>
-                <Grid Width="274.4">
-                    <Image Width="274.4" Height="261.6" Source="./Assets/HideImage/HideImagebig.png"/>
-                    <TextBlock x:Name="TB_Image" Margin="10 100 0 0"  Text="Image" Style="{StaticResource TextBlockLargeBold}">
-                        <TextBlock.Effect>
-                            <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
-                </Grid>
+                        <hc:OutlineText x:Name="textBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold"  StrokeThickness="0.9" FontSize="25" Text="Password" Fill="Black" Stroke="White">
+                            <hc:OutlineText.Effect>
+                                <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                            </hc:OutlineText.Effect>
+                        </hc:OutlineText>
+                    </Grid>
+                    <Grid Width="274.4">
+                        <Image Width="274.4" Height="261.6" Source="./Assets/HideMessage/HideMessage-iconBig.png"/>
+                        <TextBlock x:Name="TB_Message" Margin="0 60 0 0" Text="Message" Style="{StaticResource TextBlockLargeBold}">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Width="274.4">
+                        <Image Width="274.4" Height="261.6" Source="./Assets/HideImage/HideImagebig.png"/>
+                        <TextBlock x:Name="TB_Image" Margin="10 100 0 0"  Text="Image" Style="{StaticResource TextBlockLargeBold}">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="White" Direction="315" ShadowDepth="5" BlurRadius="8" RenderingBias="Quality"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
 
-            </hc:Carousel>
+                </hc:Carousel>
+            </Grid>
+
             <!--
             <Label Grid.Row="0" VerticalAlignment="Center" Width="100" Height="100" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center"   >
                 <Label.Content>
