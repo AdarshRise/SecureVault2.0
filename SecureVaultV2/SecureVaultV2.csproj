@@ -56,8 +56,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HandyControl, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HandyControl.2.2.0\lib\net47\HandyControl.dll</HintPath>
+    <Reference Include="HandyControl, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandyControl.2.3.0\lib\net47\HandyControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xaml">
@@ -72,6 +72,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UCSignUp.xaml.cs">
+      <DependentUpon>UCSignUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCTWB.xaml.cs">
+      <DependentUpon>UCTWB.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,14 +90,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UCSignUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCTWB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\CloseOpen\BlueButton16.png" />
@@ -250,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Vault\Vault-iconBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
