@@ -248,7 +248,15 @@
                 -->
 
                 <hc:Drawer Name="DrawerLeft" Dock="Left" ShowMode="Push">
-                    <Border Background="{DynamicResource RegionBrush}" Width="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                    <Border  Width="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                        <Border.Background>
+                           
+                                <LinearGradientBrush EndPoint="0.498,-0.43" StartPoint="0.516,1.355">
+                                    <GradientStop Color="Black" Offset="0.109"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                    
+                        </Border.Background>
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -267,7 +275,7 @@
 
                                 <Button CommandTarget="{Binding}" Command="hc:ControlCommands.Close" Grid.Row="0" HorizontalAlignment="Right" Foreground="{DynamicResource PrimaryTextBrush}" Style="{StaticResource ButtonIcon}" hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}"/>
 
-                                <UserControl:UCTWB/>
+                                <UserControl:UCSignUp/>
                             </StackPanel>
 
 
