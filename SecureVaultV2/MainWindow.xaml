@@ -6,13 +6,14 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"
            xmlns:UserControl="clr-namespace:SecureVaultV2"
            mc:Ignorable="d"
-        Title="MainWindow" 
+        
         WindowStartupLocation="CenterScreen"
-        Style="{StaticResource WindowWin10}"
-        ShowTitle="True"
+        
+           Background="Transparent"
+      
         Height="auto" 
         Width="auto"
-        SizeToContent="WidthAndHeight"   
+        SizeToContent="WidthAndHeight" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize" Icon="Assets/Vault/Vault-icon32.png" BorderThickness="1,2,4,6"   
            >
     <hc:Window.Resources>
         
@@ -209,8 +210,12 @@
     </hc:Window.NonClientAreaContent>
     
     -->
+    <Border BorderBrush="#FF000000" BorderThickness="1" CornerRadius="8">
+ 
+
+
     <!-- Window Grid-->
-    <Grid Height="550" Width="950">
+    <Grid Height="550" Width="950" >
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.296,1.557" StartPoint="0.641,-0.21">
                 <GradientStop Color="Black" Offset="0.011"/>
@@ -283,6 +288,9 @@
                         </Grid>
                     </Border>
                 </hc:Drawer>
+                
+                <!--
+           
                 <hc:Drawer Name="DrawerTop" Dock="Top" ShowMode="Press">
                     <Border Background="{DynamicResource RegionBrush}" Height="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
                         <Grid>
@@ -295,18 +303,45 @@
                         </Grid>
                     </Border>
                 </hc:Drawer>
-                <hc:Drawer Name="DrawerRight" MaskCanClose="False">
-                    <Border Background="{DynamicResource RegionBrush}" Width="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                -->
+                
+                <hc:Drawer Name="DrawerRight" MaskCanClose="True">
+                    <Border  Width="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                        <Border.Background>
+
+                            <LinearGradientBrush EndPoint="0.498,-0.43" StartPoint="0.516,1.355">
+                                <GradientStop Color="Black" Offset="0.109"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+
+                        </Border.Background>
+
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Margin="10,0,0,0" Text="Header" Style="{StaticResource TextBlockTitle}" HorizontalAlignment="Left"/>
-                            <Button CommandTarget="{Binding}" Command="hc:ControlCommands.Close" Grid.Row="0" HorizontalAlignment="Right" Foreground="{DynamicResource PrimaryTextBrush}" Style="{StaticResource ButtonIcon}" hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}"/>
+
+
+
+                            <StackPanel Margin="10,0,0,0" >
+                                <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="SignIn" Style="{StaticResource TextBlockTitle}" HorizontalAlignment="Left" />
+                              
+                                <Button CommandTarget="{Binding}" Command="hc:ControlCommands.Close"  HorizontalAlignment="Right"  Foreground="{DynamicResource PrimaryTextBrush}" Style="{StaticResource ButtonIcon}" hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}"/>
+                                </StackPanel>
+                                 <UserControl:UCSignIn/>
+
+                            </StackPanel>
+
+
+
+                            
                         </Grid>
                     </Border>
                 </hc:Drawer>
+                
+                <!--
                 <hc:Drawer Name="DrawerBottom" Dock="Bottom" ShowMask="False">
                     <Border Background="{DynamicResource RegionBrush}" Height="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
                         <Grid>
@@ -319,6 +354,9 @@
                         </Grid>
                     </Border>
                 </hc:Drawer>
+                -->
+                
+                
             </hc:SimplePanel>
         </hc:TransitioningContentControl>
 
@@ -328,18 +366,31 @@
 
 
         <!-- Close minimize Grid-->
-        <Grid VerticalAlignment="Top" >
-            <Button x:Name="Close_But" Style="{StaticResource ButtonInfo}" Margin="0 0 0 0" Background="Transparent" Cursor="Hand" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Close_But_Click"  Height="25" Width="32">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Right">
+
+
+            <Border BorderBrush="Transparent" Name="MyBorder"  
+            Height="25" 
+            Background="Transparent" 
+            Width="32" 
+            CornerRadius="3">
+                <Button x:Name="Min_But" Style="{StaticResource ButtonInfo}" Width="{Binding MyBorder.Width}" Height="{Binding MyBorder.Height}"  Cursor="Hand" Background="Transparent"   Click="Min_But_Click"  >
+                    <Button.Content>
+
+                        <Image Source=".\Assets\CloseOpen\MinimizeButton24.png"/>
+
+                    </Button.Content>
+
+
+                </Button>
+            </Border>
+            <Button x:Name="Close_But" Style="{StaticResource ButtonInfo}"  Background="Blue" Cursor="Hand" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Close_But_Click"  Height="25" Width="32">
                 <Button.Content>
-                    <Image  Source=".\Assets\CloseOpen\Close2Button24.png"/>
+                    <Image  Source=".\Assets\CloseOpen\Close2Button24.png" StretchDirection="DownOnly"/>
                 </Button.Content>
             </Button>
-            <Button x:Name="Min_But" Style="{StaticResource ButtonInfo}" Margin="0 0 26 0"  Cursor="Hand" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Min_But_Click"  Height="25" Width="32">
-                <Button.Content>
-                    <Image Source=".\Assets\CloseOpen\MinimizeButton24.png"/>
-                </Button.Content>
-            </Button>
-        </Grid>
+           
+        </StackPanel>
 <!--Title and working window Grid-->
         <Grid Height="auto" Width="auto" >
             <Grid.ColumnDefinitions>
@@ -423,7 +474,7 @@
                     </Grid.RowDefinitions>
 
 
-                    <UserControl:UCTWB HorizontalAlignment="Left" Margin="50 0 0 0" FontStretch="SemiExpanded" Grid.Row="0"></UserControl:UCTWB>
+                    <UserControl:UCTWB HorizontalAlignment="Left" Margin="100 0 0 0" FontStretch="SemiExpanded" Grid.Row="0"></UserControl:UCTWB>
                    <!--
                     
                     -->
@@ -472,4 +523,6 @@
         </Grid>
 
     </Grid>
+        
+</Border>
 </hc:Window>
