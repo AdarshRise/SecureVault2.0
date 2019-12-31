@@ -13,7 +13,7 @@
       
         Height="auto" 
         Width="auto"
-        SizeToContent="WidthAndHeight" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize" Icon="Assets/Vault/Vault-icon32.png" BorderThickness="1,2,4,6"   
+        SizeToContent="WidthAndHeight"  ResizeMode="NoResize" Icon="Assets/Vault/Vault-icon32.png"
            >
     <hc:Window.Resources>
         
@@ -213,7 +213,6 @@
     <Border BorderBrush="#FF000000" BorderThickness="1" CornerRadius="8">
  
 
-
     <!-- Window Grid-->
     <Grid Height="550" Width="950" >
         <Grid.Background>
@@ -223,9 +222,33 @@
             </LinearGradientBrush>
         </Grid.Background>
 
+           
+        <!-- Close minimize Grid-->
+        
+            <StackPanel Orientation="Horizontal" Margin="0 16 0 0" VerticalAlignment="Top"  HorizontalAlignment="Right">
 
 
-        <hc:TransitioningContentControl>
+
+                <Button x:Name="Min_But" Style="{StaticResource ButtonInfo}" Height="25" Width="32"  Cursor="Hand" Background="Transparent"   Click="Min_But_Click"  >
+                        <Button.Content>
+
+                            <Image Source=".\Assets\CloseOpen\MinimizeButton24.png"/>
+
+                        </Button.Content>
+
+
+                    </Button>
+          
+                <Button x:Name="Close_But" Style="{StaticResource ButtonInfo}"  Background="Transparent" Cursor="Hand" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Close_But_Click"  Height="25" Width="32">
+                    <Button.Content>
+                        <Image  Source=".\Assets\CloseOpen\Close2Button24.png" StretchDirection="DownOnly"/>
+                    </Button.Content>
+                </Button>
+
+            </StackPanel>
+
+
+            <hc:TransitioningContentControl>
        
             
             
@@ -365,32 +388,7 @@
 
 
 
-        <!-- Close minimize Grid-->
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Right">
-
-
-            <Border BorderBrush="Transparent" Name="MyBorder"  
-            Height="25" 
-            Background="Transparent" 
-            Width="32" 
-            CornerRadius="3">
-                <Button x:Name="Min_But" Style="{StaticResource ButtonInfo}" Width="{Binding MyBorder.Width}" Height="{Binding MyBorder.Height}"  Cursor="Hand" Background="Transparent"   Click="Min_But_Click"  >
-                    <Button.Content>
-
-                        <Image Source=".\Assets\CloseOpen\MinimizeButton24.png"/>
-
-                    </Button.Content>
-
-
-                </Button>
-            </Border>
-            <Button x:Name="Close_But" Style="{StaticResource ButtonInfo}"  Background="Blue" Cursor="Hand" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Close_But_Click"  Height="25" Width="32">
-                <Button.Content>
-                    <Image  Source=".\Assets\CloseOpen\Close2Button24.png" StretchDirection="DownOnly"/>
-                </Button.Content>
-            </Button>
-           
-        </StackPanel>
+        
 <!--Title and working window Grid-->
         <Grid Height="auto" Width="auto" >
             <Grid.ColumnDefinitions>
