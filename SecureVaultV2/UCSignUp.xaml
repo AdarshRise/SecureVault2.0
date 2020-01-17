@@ -14,9 +14,9 @@
 
             <StackPanel  VerticalAlignment="Center" Orientation="Vertical">
 
-                <hc:Gravatar Height="180" Width="180" Id="{Binding Text,ElementName=TextBoxName}" Margin="0 12"/>
-                <hc:TextBox Name="TextBoxName" Margin="0 0 0 15" hc:Poptip.Content="This Is Your Special Name" ShowClearButton="True" Width="180"  hc:InfoElement.Placeholder="Enter ID Name"  hc:InfoElement.Necessary="True" />
-                <hc:TextBox Margin="0 15" hc:Poptip.Content="Your Full Name" ShowClearButton="True" Width="180"  hc:InfoElement.Placeholder="Your Full Name"  hc:InfoElement.Necessary="True" />
+                <hc:Gravatar Height="180" Width="180" Id="{Binding Text,ElementName=Idtxt}" Margin="0 12"/>
+                <hc:TextBox MaxLength="35" Name="Idtxt" Margin="0 0 0 15" hc:Poptip.Content="This Is Your Special Name" ShowClearButton="True" Width="180"  hc:InfoElement.Placeholder="Enter ID Name"  hc:InfoElement.Necessary="True" />
+                <hc:TextBox MaxLength="35"  Margin="0 15" Name="nametxt" hc:Poptip.Content="Your Full Name" ShowClearButton="True" Width="180"  hc:InfoElement.Placeholder="Your Full Name"  hc:InfoElement.Necessary="True" />
                 
                 
          
@@ -25,11 +25,15 @@
                 <hc:PasswordBox Foreground="Wheat" ShowClearButton="True" ShowEyeButton="True" Width="280" hc:InfoElement.TitleWidth="80" hc:InfoElement.Placeholder="SuperNice" hc:InfoElement.TitleAlignment="Left" hc:InfoElement.Title="balebale" hc:InfoElement.Necessary="True" />
                
                 -->
-                <hc:PasswordBox Margin="0 15" ShowClearButton="True" ShowEyeButton="True" Width="180" hc:Poptip.Content="Use a Strong Password"  hc:InfoElement.Placeholder="EnterPassword"  hc:InfoElement.Necessary="True" />
+                <hc:PasswordBox   Name="Passtxt" Margin="0 15" ShowClearButton="True" ShowEyeButton="True" Width="180" hc:Poptip.Content="Use a Strong Password"  hc:InfoElement.Placeholder="EnterPassword"  hc:InfoElement.Necessary="True" />
 
-                <hc:PasswordBox Margin="0 15" ShowClearButton="True" ShowEyeButton="True" Width="180" hc:Poptip.Content="Can't Be Changed Later"  hc:InfoElement.Placeholder="Re-EnterPassword"  hc:InfoElement.Necessary="True" />
-
-                <Button Content="Register" Margin="20" Style="{StaticResource GlassAnime_But}"   >
+                <hc:PasswordBox Name="RePasstxt" Margin="0 15" ShowClearButton="True" ShowEyeButton="True" Width="180" hc:Poptip.Content="Can't Be Changed Later"  hc:InfoElement.Placeholder="Re-EnterPassword"  hc:InfoElement.Necessary="True" />
+               
+                <ScrollViewer  VerticalScrollBarVisibility = "Hidden"  HorizontalAlignment = "Left" >
+                    <StackPanel hc:Growl.Token = "Process" VerticalAlignment = "Top" Margin = "0,10,10,10" />
+                </ScrollViewer >
+                
+                <Button Content="Register" Name="but_Register_SignUp" Click="but_Register_SignUp_Click"  Style="{StaticResource GlassAnime_But}"   >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -40,9 +44,15 @@
                     </Button.RenderTransform>
                 </Button>
 
-            </StackPanel>
 
+    
+
+
+            </StackPanel>
+         
+           
         </hc:TransitioningContentControl>
         
     </StackPanel>
+    
 </UserControl>

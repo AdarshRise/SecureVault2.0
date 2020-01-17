@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureVaultV2", "SecureVaul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handy Control learn2", "..\Modern UI\Handy Control learn2\Handy Control learn2.csproj", "{CB8FE91E-D5A7-402C-BB28-04AB2486370D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureVault", "..\SecureVault\SecureVault\SecureVault.csproj", "{F912B57F-F848-4922-B78B-AB8732FCFD3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{CB8FE91E-D5A7-402C-BB28-04AB2486370D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB8FE91E-D5A7-402C-BB28-04AB2486370D}.Release|x64.ActiveCfg = Release|x64
 		{CB8FE91E-D5A7-402C-BB28-04AB2486370D}.Release|x64.Build.0 = Release|x64
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Debug|x64.ActiveCfg = Debug|x64
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Debug|x64.Build.0 = Debug|x64
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Release|x64.ActiveCfg = Release|x64
+		{F912B57F-F848-4922-B78B-AB8732FCFD3E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

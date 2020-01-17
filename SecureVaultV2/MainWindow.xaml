@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+           
            xmlns:UserControl="clr-namespace:SecureVaultV2"
            mc:Ignorable="d"
         
@@ -225,7 +226,7 @@
            
         <!-- Close minimize Grid-->
         
-            <StackPanel Orientation="Horizontal" Margin="0 16 0 0" VerticalAlignment="Top"  HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" Margin="0 18 0 0" VerticalAlignment="Top"  HorizontalAlignment="Right">
 
 
 
@@ -519,8 +520,8 @@
             </Label>
             -->
         </Grid>
-
-    </Grid>
+           
+        </Grid>
         
 </Border>
 </hc:Window>

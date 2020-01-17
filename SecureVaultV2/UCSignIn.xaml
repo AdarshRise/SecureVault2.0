@@ -14,8 +14,8 @@
 
             <StackPanel  VerticalAlignment="Center" Orientation="Vertical">
 
-                <hc:Gravatar Height="180" Width="180" Id="{Binding Text,ElementName=TextBoxName}" Margin="0 12"/>
-                <hc:TextBox Name="TextBoxName" Margin="0 0 0 15" hc:Poptip.Content="Enter Your Special Name" ShowClearButton="True" Width="180"  hc:InfoElement.Placeholder="Enter Vault ID"  hc:InfoElement.Necessary="True" />
+                <hc:Gravatar Height="180" Width="180" Id="{Binding Text,ElementName=VaultIdNametxt}" Margin="0 12"/>
+                <hc:TextBox Name="VaultIdNametxt" Margin="0 0 0 15" hc:Poptip.Content="Enter Your Special Name" ShowClearButton="True" Width="180"  hc:InfoElement.Placeholder="Enter Vault ID"  hc:InfoElement.Necessary="True" />
                
                 
                 
@@ -32,9 +32,9 @@
 
 
                 -->
-                <hc:PasswordBox Margin="0 15" ShowClearButton="True" ShowEyeButton="True" Width="180" hc:Poptip.Content="Use Your Vault Password"  hc:InfoElement.Placeholder="EnterPassword"  hc:InfoElement.Necessary="True" />
+                <hc:PasswordBox Name="LoginPasstxt"  Margin="0 15" ShowClearButton="True" ShowEyeButton="True" Height="auto" Width="180" hc:Poptip.Content="Use Your Vault Password"  hc:InfoElement.Placeholder="EnterPassword"  hc:InfoElement.Necessary="True" />
 
-                <Button Content="Login" Margin="20" Style="{StaticResource GlassAnime_But}"   >
+                <Button Content="Login" Margin="20" Style="{StaticResource GlassAnime_But}" Name="SignIn_Login_but" Click="SignIn_Login_but_Click"  >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
