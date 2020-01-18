@@ -7,7 +7,7 @@
            
            xmlns:UserControl="clr-namespace:SecureVaultV2"
            mc:Ignorable="d"
-        
+       
         WindowStartupLocation="CenterScreen"
         
            Background="Transparent"
@@ -477,10 +477,13 @@
                    <!--
                     
                     -->
-                    
-                    <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            
+                            
+                       
+                    <StackPanel Orientation="Horizontal" >
                         
-                        <ToggleButton Content="SignUp" Margin="20" Style="{StaticResource GlassAnime_TBut}"   IsChecked="{Binding IsOpen,ElementName=DrawerLeft}">
+                        <ToggleButton Content="SignUp" Margin="20 0 20 0" Style="{StaticResource GlassAnime_TBut}"   IsChecked="{Binding IsOpen,ElementName=DrawerLeft}">
                             <ToggleButton.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -501,10 +504,25 @@
                             </ToggleButton.RenderTransform>
                         </ToggleButton>
                     </StackPanel>
-                   
+
+                            <Button Content="Switch" Name="SwitchTest" Click="SwitchTest_Click" Style="{StaticResource GlassAnime_But}">
+                                <Button.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Button.RenderTransform>
+                            
+                            </Button>
+                    
+                
 
 
-                </Grid>
+                        </StackPanel>
+
+                    </Grid>
                 
 
             </Grid>

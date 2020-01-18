@@ -19,7 +19,7 @@ namespace SecureVaultV2
         {
             InitializeComponent();
         }
-
+      
         private void Close_But_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             var val = MessageBox.Ask("Shutting down in 3 2 1....", "End");
@@ -67,6 +67,16 @@ namespace SecureVaultV2
         {
             // System.Windows.Application.Current.;
             WindowState = System.Windows.WindowState.Minimized;
+        }
+
+        private void SwitchTest_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Vault vault = new Vault();
+            this.Hide();
+            vault.ShowDialog();
+            this.Show();
+          
+            GC.Collect();
         }
     }
 }

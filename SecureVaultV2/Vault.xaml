@@ -1,0 +1,69 @@
+﻿<Window x:Class="SecureVaultV2.Vault"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SecureVaultV2"
+        mc:Ignorable="d"
+        
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+
+        WindowStartupLocation="CenterOwner"
+       
+        Title="Vault" Height="450" Width="800" MouseLeftButtonDown="Window_MouseLeftButtonDown" ResizeMode="NoResize" Background="#FF7C5858" Topmost="True" >
+    <!--
+         Style="{StaticResources  WindowBlur}"
+    
+    -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" ></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.285*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <hc:SideMenu Grid.Column="0" Grid.Row="1">
+            <hc:SideMenuItem Header="Password Protection">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="./Assets/HidePassword/HidePassword32.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+                <hc:SideMenuItem Header="VaultIn">
+                    <hc:SideMenuItem.Icon>
+                        <TextBlock Text="=)" />
+                    </hc:SideMenuItem.Icon>
+                </hc:SideMenuItem>
+                <hc:SideMenuItem Header="VaultOut">
+                    <hc:SideMenuItem.Icon>
+                        <TextBlock Text="&#xf246;" />
+                    </hc:SideMenuItem.Icon>
+                </hc:SideMenuItem>
+            </hc:SideMenuItem>
+
+            <!--
+            <TextBlock Text="Hello" Foreground="Black"/>
+            <hc:SideMenuItem Header="Hello"/>
+
+            -->
+            <hc:SideMenuItem Header="Message Privacy">
+                <hc:SideMenuItem.Icon>
+                    <Image Source="./Assets/HideMessage/HideMessage-icon32.png" Width="24" Height="24"/>
+                </hc:SideMenuItem.Icon>
+                <hc:SideMenuItem Header="Self Message">
+                    <hc:SideMenuItem.Icon>
+                        <TextBlock Text="&#xf3ab;"/>
+                    </hc:SideMenuItem.Icon>
+                </hc:SideMenuItem>
+                <hc:SideMenuItem Header="Share Message">
+                    <hc:SideMenuItem.Icon>
+                        <TextBlock Text="&#xf3ab;"/>
+                    </hc:SideMenuItem.Icon>
+                </hc:SideMenuItem>
+            </hc:SideMenuItem>
+        </hc:SideMenu>
+
+    </Grid>
+</Window>
