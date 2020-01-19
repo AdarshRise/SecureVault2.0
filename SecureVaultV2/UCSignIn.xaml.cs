@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -74,8 +75,35 @@ namespace SecureVaultV2
                                     HandyControl.Controls.MessageBox.Success
                                     ("Welcome, You have logged In ", "Happy to see you again");
                                     // MessageBox.Show(getInfo.getLog().ToString());
-                                    Tools.setLog(true);
+                                    Tools.setLog(true,true);
+
+                                    Vault vault = new Vault();
+                                    var WelcomeWindow = Window.GetWindow(this);        // Getting Parent Window control                           
+                                    WelcomeWindow.Hide();                                   
+                                    //vault.ShowDialog();
+
+                                    vault.Opacity = 0;
+                                    vault.ShowDialog();
+
+
+
+                                    DoubleAnimation da = new DoubleAnimation();
+                                    da.From = 1;
+                                    da.To = 0;
+                                    da.Duration = new Duration(TimeSpan.FromSeconds(2));
+                                    da.AutoReverse = true;
+                                    da.RepeatBehavior = RepeatBehavior.Forever;
+                                    // da.RepeatBehavior=new RepeatBehavior(3);
+                                    vault.BeginAnimation(OpacityProperty, da);
                                     //MessageBox.Show(getInfo.getLog().ToString());
+
+
+
+
+                                    Tools.setLog(false,true);                // changing  the login side
+                                    WelcomeWindow.Show();
+
+                               
                                 }
                                 else
                                 {

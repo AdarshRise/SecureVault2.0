@@ -9,14 +9,26 @@
         
         xmlns:hc="https://handyorg.github.io/handycontrol"
 
-        WindowStartupLocation="CenterOwner"
-       
-        Title="Vault" Height="450" Width="800" MouseLeftButtonDown="Window_MouseLeftButtonDown" ResizeMode="NoResize" Background="#FF7C5858" Topmost="True" >
+        WindowStartupLocation="CenterScreen"
+            Height="auto" 
+        Width="auto"
+        SizeToContent="WidthAndHeight"  
+       x:Name="VaultWin"
+        Icon="Assets/Vault/Vault-icon32.png"
+        Title="Vault"   ResizeMode="NoResize" Background="#FF7C5858" Topmost="True" Opacity="0" >
+    <Window.Resources>
+        <Storyboard x:Key="showMe">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:1.5" To="0.95"/>
+        </Storyboard>
+    </Window.Resources>
     <!--
          Style="{StaticResources  WindowBlur}"
     
     -->
-    <Grid>
+    <Grid Height="550" Width="950">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*" ></RowDefinition>
             <RowDefinition></RowDefinition>

@@ -22,8 +22,8 @@
                 <Setter Property="NonClientAreaForeground" Value="White"/>
                 <Setter Property="CloseButtonForeground" Value="White"/>
             </Style>
-
-
+            
+         
             <Style TargetType="Button" x:Key="GlassAnime_But" BasedOn="{StaticResource ButtonInfo}">
 
                 <!--Putting Gradient Brush in Style -->

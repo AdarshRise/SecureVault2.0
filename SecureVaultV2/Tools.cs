@@ -17,16 +17,16 @@ namespace SecureVaultV2
         {
             return login;
         }
-        public static void setLog(bool value)
+        public static void setLog(bool value,bool inout)
         {
             if (value)
                 login = true;
-            else
+            else if( !inout)
             {
                 HandyControl.Controls.Growl.ErrorGlobal("Login Problem, Restart The Software"); // outside window
             }
 
-            if (!value)
+            if ( !value)
                 login = false;
          
         }

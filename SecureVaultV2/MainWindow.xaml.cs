@@ -10,6 +10,7 @@ using System;
 
 //using MessageBox = HandyControl.Controls.MessageBox;
 using MessageBoxResult = System.Windows.MessageBoxResult;
+using System.Windows.Media.Animation;
 
 namespace SecureVaultV2
 {
@@ -18,8 +19,15 @@ namespace SecureVaultV2
         public MainWindow()
         {
             InitializeComponent();
+            ShowMe();
+            
         }
-      
+        public void ShowMe()
+        {
+            (FindResource("showMe") as Storyboard).Begin(this);
+        }
+
+
         private void Close_But_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             var val = MessageBox.Ask("Shutting down in 3 2 1....", "End");
