@@ -21,7 +21,7 @@
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:1.5" To="0.95"/>
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.65" To="0.99"/>
         </Storyboard>
     </Window.Resources>
     <!--
@@ -30,7 +30,7 @@
     -->
     <Grid Height="550" Width="950">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*" ></RowDefinition>
+            <RowDefinition Height="0.08*" ></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         
@@ -38,6 +38,13 @@
             <ColumnDefinition Width="0.285*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid Background="Green" Grid.Row="0" Grid.Column="1">
+        </Grid>
+        
+        <Grid x:Name="VaultDisplayWindow" Grid.Row="1" Grid.Column="1">
+            
+        </Grid>
+        
         <hc:SideMenu Grid.Column="0" Grid.Row="1">
             <hc:SideMenuItem Header="Password Protection">
                 <hc:SideMenuItem.Icon>
@@ -45,12 +52,13 @@
                 </hc:SideMenuItem.Icon>
                 <hc:SideMenuItem Header="VaultIn">
                     <hc:SideMenuItem.Icon>
-                        <TextBlock Text="=)" />
+                        <Image Source="./Assets/Vault-Menu/shield.png" Width="22" Height="22"/>
+                     
                     </hc:SideMenuItem.Icon>
                 </hc:SideMenuItem>
                 <hc:SideMenuItem Header="VaultOut">
                     <hc:SideMenuItem.Icon>
-                        <TextBlock Text="&#xf246;" />
+                        <Image Source="./Assets/Vault-Menu/lock.png" Width="22" Height="22"/>
                     </hc:SideMenuItem.Icon>
                 </hc:SideMenuItem>
             </hc:SideMenuItem>
@@ -66,12 +74,12 @@
                 </hc:SideMenuItem.Icon>
                 <hc:SideMenuItem Header="Self Message">
                     <hc:SideMenuItem.Icon>
-                        <TextBlock Text="&#xf3ab;"/>
+                        <Image Source="./Assets/Vault-Menu/secure-file.png" Width="22" Height="22"/>
                     </hc:SideMenuItem.Icon>
                 </hc:SideMenuItem>
                 <hc:SideMenuItem Header="Share Message">
                     <hc:SideMenuItem.Icon>
-                        <TextBlock Text="&#xf3ab;"/>
+                        <Image Source="./Assets/Vault-Menu/safe.png" Width="22" Height="22"/>
                     </hc:SideMenuItem.Icon>
                 </hc:SideMenuItem>
             </hc:SideMenuItem>

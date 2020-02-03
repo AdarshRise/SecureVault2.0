@@ -58,6 +58,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Vault.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -306,6 +309,17 @@
     <SplashScreen Include="VaultScreen2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </SplashScreen>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Vault-Menu\lock-shape-eye.png" />
+    <Resource Include="Assets\Vault-Menu\lock.png" />
+    <Resource Include="Assets\Vault-Menu\safe.png" />
+    <Resource Include="Assets\Vault-Menu\safe%284%29.png" />
+    <Resource Include="Assets\Vault-Menu\secure-file.png" />
+    <Resource Include="Assets\Vault-Menu\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vault.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
