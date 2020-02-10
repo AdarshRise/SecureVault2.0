@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="SecureVaultV2.UCVaultOut"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SecureVaultV2"
+              xmlns:hc="https://handyorg.github.io/handycontrol"
+             Background="Gray"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Enter Your Email and Get Password" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 0 0 30" FontSize="24"></TextBlock>
+            
+            <hc:TextBox Margin="0 15" x:Name="Email_box" hc:Poptip.Content="Enter Your Email" MaxLength="35" ShowClearButton="True" Width="180" Height="18"  hc:InfoElement.Placeholder="Enter Email"  hc:InfoElement.Necessary="True" />
+            <hc:TextBox Margin="0 15" x:Name="Pass_box" IsReadOnly="True" hc:Poptip.Content="Get Your Password" MaxLength="35" ShowClearButton="True" Width="180" Height="18"  hc:InfoElement.Placeholder="Get Password"   />
+
+            <Button Content="Read" Margin="20" Style="{StaticResource GlassAnime_But}" Name="ReadPass" Click="ReadPass_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </StackPanel>
+        
+       
+        <!--
+        
+        <RichTextBox Grid.Column="1">
+            <FlowDocument>
+                <Paragraph>
+                    <Run FontSize="20" Text="Title"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Text"/>
+                </Paragraph>
+                <Paragraph>
+                    <Hyperlink>https://github.com/NaBian/HandyControl</Hyperlink>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        
+        -->
+
+    </Grid>
+</UserControl>

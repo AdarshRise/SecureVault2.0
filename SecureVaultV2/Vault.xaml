@@ -50,13 +50,13 @@
                 <hc:SideMenuItem.Icon>
                     <Image Source="./Assets/HidePassword/HidePassword32.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
-                <hc:SideMenuItem Header="VaultIn">
+                <hc:SideMenuItem  Header="VaultIn" MouseDown="SideMenuItem_VaultIn" >
                     <hc:SideMenuItem.Icon>
-                        <Image Source="./Assets/Vault-Menu/shield.png" Width="22" Height="22"/>
+                        <Image  Source="./Assets/Vault-Menu/shield.png" Width="22" Height="22"/>
                      
                     </hc:SideMenuItem.Icon>
                 </hc:SideMenuItem>
-                <hc:SideMenuItem Header="VaultOut">
+                <hc:SideMenuItem Header="VaultOut" MouseDown="SideMenuItem_VaultOut">
                     <hc:SideMenuItem.Icon>
                         <Image Source="./Assets/Vault-Menu/lock.png" Width="22" Height="22"/>
                     </hc:SideMenuItem.Icon>
@@ -72,12 +72,12 @@
                 <hc:SideMenuItem.Icon>
                     <Image Source="./Assets/HideMessage/HideMessage-icon32.png" Width="24" Height="24"/>
                 </hc:SideMenuItem.Icon>
-                <hc:SideMenuItem Header="Self Message">
+                <hc:SideMenuItem Header="Self Message" MouseDown="SideMenuItem_SelfMessage">
                     <hc:SideMenuItem.Icon>
                         <Image Source="./Assets/Vault-Menu/secure-file.png" Width="22" Height="22"/>
                     </hc:SideMenuItem.Icon>
                 </hc:SideMenuItem>
-                <hc:SideMenuItem Header="Share Message">
+                <hc:SideMenuItem Header="Share Message" MouseDown="SideMenuItem_ShareMessage">
                     <hc:SideMenuItem.Icon>
                         <Image Source="./Assets/Vault-Menu/safe.png" Width="22" Height="22"/>
                     </hc:SideMenuItem.Icon>

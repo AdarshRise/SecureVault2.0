@@ -97,6 +97,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Tools.cs" />
+    <Compile Include="UCSelfMessage.xaml.cs">
+      <DependentUpon>UCSelfMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCShareMessage.xaml.cs">
+      <DependentUpon>UCShareMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCSignIn.xaml.cs">
       <DependentUpon>UCSignIn.xaml</DependentUpon>
     </Compile>
@@ -105,6 +111,12 @@
     </Compile>
     <Compile Include="UCTWB.xaml.cs">
       <DependentUpon>UCTWB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCVaultIn.xaml.cs">
+      <DependentUpon>UCVaultIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCVaultOut.xaml.cs">
+      <DependentUpon>UCVaultOut.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vault.xaml.cs">
       <DependentUpon>Vault.xaml</DependentUpon>
@@ -121,6 +133,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UCSelfMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCShareMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UCSignIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +150,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UCTWB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCVaultIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCVaultOut.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

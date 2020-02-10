@@ -23,6 +23,10 @@ namespace SecureVaultV2
     public partial class Vault : Window
     {
         static UserControl usc1 = new UCTWB();
+        static UserControl UCVaultIn = new UCVaultIn();
+        static UserControl UCVaultOut = new UCVaultOut();
+        static UserControl UCSelfMessage = new UCSelfMessage();
+        static UserControl UCShareMessage = new UCShareMessage();
 
         public Vault()
         {
@@ -31,9 +35,6 @@ namespace SecureVaultV2
             ShowMe();
            // Thread.Sleep(2000);
             VaultDisplayWindow.Children.Add(usc1);
-           
-           
-
             this.Closed += new EventHandler(MainWindow_Closed);
 
         }
@@ -53,6 +54,29 @@ namespace SecureVaultV2
             
         }
 
-     
+        private void SideMenuItem_VaultIn(object sender, MouseButtonEventArgs e)
+        {
+            //HandyControl.Controls.MessageBox.Warning("Error in Vault Id Field, Please Check it again.", "Registration Error");
+            VaultDisplayWindow.Children.Clear();
+            VaultDisplayWindow.Children.Add(UCVaultIn);
+        }
+
+        private void SideMenuItem_VaultOut(object sender, MouseButtonEventArgs e)
+        {
+            VaultDisplayWindow.Children.Clear();
+            VaultDisplayWindow.Children.Add(UCVaultOut);
+        }
+
+        private void SideMenuItem_SelfMessage(object sender, MouseButtonEventArgs e)
+        {
+            VaultDisplayWindow.Children.Clear();
+            VaultDisplayWindow.Children.Add(UCSelfMessage);
+        }
+
+        private void SideMenuItem_ShareMessage(object sender, MouseButtonEventArgs e)
+        {
+            VaultDisplayWindow.Children.Clear();
+            VaultDisplayWindow.Children.Add(UCShareMessage);
+        }
     }
 }
