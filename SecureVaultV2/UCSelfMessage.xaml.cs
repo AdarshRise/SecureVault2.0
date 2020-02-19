@@ -48,7 +48,7 @@ namespace SecureVaultV2
 
                 String data = StringFromRichTextBox(MessageBoxData);
           //  HandyControl.Controls.MessageBox.Warning(data, "Registration Error");
-            Tools.PutSelfMessage(StringFromRichTextBox(MessageBoxData));
+            Tools.PutSelfMessage("                  "+StringFromRichTextBox(MessageBoxData));
             Tools.NumCreator();
             Tools.PutEnSelfMessage();
             
@@ -63,7 +63,8 @@ namespace SecureVaultV2
         private void DecryptSelfMessage_Click(object sender, RoutedEventArgs e)
         {
             Tools.NumCreator();
-            Tools.GetDeSelfMessage();
+            
+            if(Tools.GetDeSelfMessage())
             MessageBoxData.Document.Blocks.Add(new Paragraph(new Run(Tools.GetDeSelfMessageVal())));
         }
     }

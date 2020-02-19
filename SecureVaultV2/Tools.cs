@@ -388,7 +388,7 @@ namespace SecureVaultV2
 
 
 
-        public static void GetDeSelfMessage()
+        public static bool GetDeSelfMessage()
         {
             byte[] encrypted=ReadFileDialog();
             string Data;
@@ -400,7 +400,10 @@ namespace SecureVaultV2
                 
 
             }
-
+            if (encrypted == null)
+            {
+                return false;
+            }
 
             HandyControl.Controls.MessageBox.Error(testing, "Not Null before descrupt");
 
@@ -425,7 +428,8 @@ namespace SecureVaultV2
                 }
 
                 HandyControl.Controls.MessageBox.Error(Data, "after descrupt");
-                DeSelfMessage = Data;
+                DeSelfMessage = Data.Substring(16);
+                return true;
                 
             }
 
@@ -434,6 +438,7 @@ namespace SecureVaultV2
                 //Console.WriteLine(exp.Message);
                 HandyControl.Controls.MessageBox.Error(exp.ToString(), "Something Went Wrong While Decrypt");
                 DeSelfMessage = null;
+                return false;
             }
         }
 
