@@ -49,7 +49,7 @@ namespace SecureVaultV2
                 {
                     sqlcon.Open();
                     //MessageBox.Show(sqlcon.ToString());
-                    string query = "insert into Record values(null,'" + Email_box.Text + "','" + Pass_box.Text + "');";
+                    string query = "insert into Record values('" + Email_box.Text + "','" + Pass_box.Text + "');";
                     //System.Data.SQLite.SQLiteCommand com = new System.Data.SQLite.SQLiteCommand(query, sqlcon);
 
                     using (System.Data.SQLite.SQLiteCommand com = new System.Data.SQLite.SQLiteCommand(query, sqlcon))
