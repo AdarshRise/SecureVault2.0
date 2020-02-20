@@ -17,7 +17,7 @@
         <StackPanel Orientation="Vertical" Grid.Row="1" Margin="10">
 
             <Grid MaxHeight="300">
-                <RichTextBox >
+                <RichTextBox x:Name="MessageBoxData" >
                     <FlowDocument>
                         <Paragraph>Write Here.</Paragraph>
                     </FlowDocument>

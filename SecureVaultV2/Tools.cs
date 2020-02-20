@@ -23,6 +23,7 @@ namespace SecureVaultV2
         private static String EnShareMessage = null;
         private static String DeShareMessage = null;
         private static String CurrentPassword = null;
+        private static String RevertPass = null;
 
         public static bool getLog()
         {
@@ -61,6 +62,19 @@ namespace SecureVaultV2
             return CurrentPassword;
         }
 
+        public static void resetCurrentPassword()
+        {
+            CurrentPassword = RevertPassword();
+        }
+        private static string RevertPassword()
+        {
+            return RevertPass;
+        }
+
+        public static void SetRevertPassword(string str)
+        {
+            RevertPass = str;
+        }
 
         // Text related Funtions
 
@@ -196,17 +210,18 @@ namespace SecureVaultV2
             GC.Collect();
         }
 
-        public void PutShareMessage(string data)
+        public static void PutShareMessage(string data)
         {
             ShareMessage = data;
+            HandyControl.Controls.MessageBox.Success(ShareMessage, " Share Message In memory");
         }
 
-        public string GetShareMessage()
+        public static string GetShareMessage()
         {
             return ShareMessage;
         }
 
-        public string GetEnShareMessage()
+        public static string GetEnShareMessage()
         {
             return EnShareMessage;
         }
@@ -214,7 +229,7 @@ namespace SecureVaultV2
 
 
 
-        public static string SaveFileDialog()
+        public static string SaveFileDialogSelf()
         {
 
             SaveFileDialog dlg = new SaveFileDialog();
@@ -237,6 +252,28 @@ namespace SecureVaultV2
          
         }
 
+        public static string SaveFileDialogShare()
+        {
+
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.InitialDirectory = "c:\\";
+            //dlg.Filter = "Image files (*.jpg)|*.jpg|All Files (*.*)|*.*";
+            //   dlg.Filter = "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" + "Portable Network Graphic (*.png)|*.png|All Files (*.*)|*.*";
+            dlg.Filter = "All Files (*.*)|*.*";
+            dlg.RestoreDirectory = true;
+            bool? result = dlg.ShowDialog();
+            if (result == true)
+            {
+                string selectedFileName = dlg.FileName;
+                //FileNameLabel.Content = selectedFileName; // to display it 
+                //MessageBox.Show(selectedFileName);
+                System.IO.File.AppendAllText(selectedFileName, GetEnShareMessage());
+                return selectedFileName;
+            }
+            return "";
+
+
+        }
 
         private static byte[] ReadFileDialog() /// Modular later
         {
@@ -254,7 +291,7 @@ namespace SecureVaultV2
                 TextReader rdr = File.OpenText(fullPath);
                 string line = rdr.ReadLine();
                 rdr.Close();
-                HandyControl.Controls.MessageBox.Error(line, "get back data Error");
+                HandyControl.Controls.MessageBox.Success(line, "get back data");
 
                 string num = "";
                 List<byte> bas = new List<byte>();
@@ -286,7 +323,7 @@ namespace SecureVaultV2
                     testing = testing + x + " ";
                 }
 
-                HandyControl.Controls.MessageBox.Error(testing, "Not Null before passing data to decrypt");
+                HandyControl.Controls.MessageBox.Success(testing, "Not Null before passing data to decrypt");
 
 
 
@@ -312,14 +349,14 @@ namespace SecureVaultV2
                     if (GetSelfMessage() != null)
                     {
                         encrypted = Encrypt(GetSelfMessage(), GetNumCreator(), aes.IV); // aes.key max is 255 it seems
-                        HandyControl.Controls.MessageBox.Error(GetNumCreator().ToString(), "PassKey Error");
+                        HandyControl.Controls.MessageBox.Success(GetNumCreator().ToString(), "PassKey");
                     } 
                     else
                     {
                         encrypted = null;
                     }
                 }
-               // EnSelfMessage = encrypted.ToString();
+                // EnSelfMessage = encrypted.ToString();
                
                 StringBuilder EnSelfMessageBuild = new StringBuilder();
 
@@ -331,6 +368,7 @@ namespace SecureVaultV2
 
                 }
                 EnSelfMessage = EnSelfMessageBuild.ToString();
+                HandyControl.Controls.MessageBox.Success(EnSelfMessage, "Encrypted Share Message");
                 EnSelfMessageBuild.Clear();
                 GC.Collect();
             }
@@ -349,31 +387,69 @@ namespace SecureVaultV2
         }
 
 
-        private void PutEnShareMessage()
+        public static void PutEnShareMessage()
         {
-            byte[] encrypted;
+
+            StringBuilder EnKeyTester = new StringBuilder();
+
+            foreach (byte var in GetNumCreator())
+            {
+                //like += var;
+                EnKeyTester.Append(var);
+                EnKeyTester.Append(" ");
+
+            }
+          
+
+            HandyControl.Controls.MessageBox.Success(EnKeyTester.ToString(), "This is the key used");
+
+            
+                HandyControl.Controls.MessageBox.Success(GetShareMessage(), "This is the Share Message used");
+
+
             try
             {
+                byte[] encrypted;
                 using (AesManaged aes = new AesManaged())
                 {
                     if (GetShareMessage() != null)
                     {
-
-
                         encrypted = Encrypt(GetShareMessage(), GetNumCreator(), aes.IV); // aes.key max is 255 it seems
+                        HandyControl.Controls.MessageBox.Success(GetNumCreator().ToString(), "PassKey ");
                     }
                     else
                     {
                         encrypted = null;
                     }
                 }
-                EnShareMessage = encrypted.ToString();
+                // EnShareMessage = encrypted.ToString();
+                if (encrypted != null)
+                    HandyControl.Controls.MessageBox.Success("The Encrypted byte array is not null", "Not Null after Encryptd");
+                else
+                    HandyControl.Controls.MessageBox.Error("The Encrypted byte array is  null", " Null after Encryptd");
+                StringBuilder EnShareMessageBuild = new StringBuilder();
+
+                foreach (byte var in encrypted)
+                {
+                    //like += var;
+                    EnShareMessageBuild.Append(var);
+                    EnShareMessageBuild.Append(" ");
+
+                }
+                EnShareMessage = EnShareMessageBuild.ToString();
+                EnShareMessageBuild.Clear();
+                GC.Collect();
             }
 
             catch (Exception exp)
             {
                 //Console.WriteLine(exp.Message);
                 EnShareMessage = null;
+            }
+
+            if (EnShareMessage != null)
+            {
+
             }
         }
 
@@ -391,59 +467,126 @@ namespace SecureVaultV2
         public static bool GetDeSelfMessage()
         {
             byte[] encrypted=ReadFileDialog();
-            string Data;
-
-            string testing="";
-            foreach (byte x in encrypted) // getting null bug
+            if (encrypted != null)
             {
-                testing =  testing + x +" ";
-                
 
-            }
-            if (encrypted == null)
-            {
-                return false;
-            }
 
-            HandyControl.Controls.MessageBox.Error(testing, "Not Null before descrupt");
+                string Data;
 
-            HandyControl.Controls.MessageBox.Error(encrypted.Length.ToString(), "It's Length");
-            HandyControl.Controls.MessageBox.Error(sizeof(byte).ToString(), "It's Size");
-            
-            try
-            {
-                using (AesManaged aes = new AesManaged())
+                string testing = "";
+                foreach (byte x in encrypted) // getting null bug
                 {
-                    
-                    if (encrypted != null)
-                    {
+                    testing = testing + x + " ";
 
 
-                        Data = Decrypt(encrypted, GetNumCreator(), aes.IV); // aes.key max is 255 it seems
-                    }
-                    else
-                    {
-                        Data = null;
-                    }
+                }
+                if (encrypted == null)
+                {
+                    return false;
                 }
 
-                HandyControl.Controls.MessageBox.Error(Data, "after descrupt");
-                DeSelfMessage = Data.Substring(16);
-                return true;
-                
-            }
+                HandyControl.Controls.MessageBox.Success(testing, "Not Null before descrupt");
 
-            catch (Exception exp)
-            {
-                //Console.WriteLine(exp.Message);
-                HandyControl.Controls.MessageBox.Error(exp.ToString(), "Something Went Wrong While Decrypt");
-                DeSelfMessage = null;
-                return false;
+                HandyControl.Controls.MessageBox.Success(encrypted.Length.ToString(), "It's Length");
+                HandyControl.Controls.MessageBox.Success(sizeof(byte).ToString(), "It's Size");
+
+                try
+                {
+                    using (AesManaged aes = new AesManaged())
+                    {
+
+                        if (encrypted != null)
+                        {
+
+
+                            Data = Decrypt(encrypted, GetNumCreator(), aes.IV); // aes.key max is 255 it seems
+                        }
+                        else
+                        {
+                            Data = null;
+                        }
+                    }
+
+                  //  HandyControl.Controls.MessageBox.Error(Data, "after descrupt");
+                    DeSelfMessage = Data.Substring(16);
+                    return true;
+
+                }
+
+                catch (Exception exp)
+                {
+                    //Console.WriteLine(exp.Message);
+                    HandyControl.Controls.MessageBox.Error(exp.ToString(), "Something Went Wrong While Decrypt");
+                    DeSelfMessage = null;
+                    return false;
+                }
             }
+            return false;
         }
 
 
-            
+
+        public static bool GetDeShareMessage()
+        {
+            byte[] encrypted = ReadFileDialog();
+            if (encrypted != null)
+            {
+
+
+                string Data;
+
+                string testing = "";
+                foreach (byte x in encrypted) // getting null bug
+                {
+                    testing = testing + x + " ";
+
+
+                }
+                if (encrypted == null)
+                {
+                    return false;
+                }
+
+                HandyControl.Controls.MessageBox.Success(testing, "Not Null before descrupt");
+
+                HandyControl.Controls.MessageBox.Success(encrypted.Length.ToString(), "It's Length");
+                HandyControl.Controls.MessageBox.Success(sizeof(byte).ToString(), "It's Size");
+
+                try
+                {
+                    using (AesManaged aes = new AesManaged())
+                    {
+
+                        if (encrypted != null)
+                        {
+
+
+                            Data = Decrypt(encrypted, GetNumCreator(), aes.IV); // aes.key max is 255 it seems
+                        }
+                        else
+                        {
+                            Data = null;
+                        }
+                    }
+
+                   // HandyControl.Controls.MessageBox.Error(Data, "after descrupt");
+                    DeShareMessage = Data.Substring(16);
+                    return true;
+
+                }
+
+                catch (Exception exp)
+                {
+                    //Console.WriteLine(exp.Message);
+                    HandyControl.Controls.MessageBox.Error(exp.ToString(), "Something Went Wrong While Decrypt");
+                    DeShareMessage = null;
+                    return false;
+                }
+            }
+            return false;
+        }
+
+
 
 
 
@@ -532,7 +675,7 @@ namespace SecureVaultV2
                     */
 
 
-            
+
 
 
         // Encrypt  Message

@@ -52,7 +52,7 @@ namespace SecureVaultV2
             Tools.NumCreator();
             Tools.PutEnSelfMessage();
             
-            HandyControl.Controls.MessageBox.Success(Tools.SaveFileDialog(), "File has been Locked");
+            HandyControl.Controls.MessageBox.Success(Tools.SaveFileDialogSelf(), "File has been Locked");
             // System.IO.File.AppendAllText("Newchup.txt", like.ToString());
 
             // MessageBoxData.Document.Blocks.Add(new Paragraph(new Run(Tools.GetEnSelfMessage())));

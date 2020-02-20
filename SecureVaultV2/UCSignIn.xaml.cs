@@ -77,6 +77,7 @@ namespace SecureVaultV2
                                     // MessageBox.Show(getInfo.getLog().ToString());
                                     Tools.setLog(true,true);
                                     Tools.putCurrentPassword(LoginPasstxt.Password.ToString());
+                                    Tools.SetRevertPassword(LoginPasstxt.Password.ToString());
                                     Vault vault = new Vault();
                                     var WelcomeWindow = Window.GetWindow(this);        // Getting Parent Window control                           
                                     WelcomeWindow.Hide();                                   
