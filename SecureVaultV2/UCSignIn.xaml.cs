@@ -28,6 +28,7 @@ namespace SecureVaultV2
 
         private void SignIn_Login_but_Click(object sender, RoutedEventArgs e)
         {
+            bool CanLogin = false;
             if (string.IsNullOrWhiteSpace(VaultIdNametxt.Text))
             {
                 HandyControl.Controls.MessageBox.Error
@@ -44,7 +45,7 @@ namespace SecureVaultV2
             {
                 //String query = " Record(Id int,EmailID varchar(40) primary key,Password varchar(40) not null );";
                 string query = "select Pass from Register where nameId='" + VaultIdNametxt.Text + "';";
-
+                
 
                 using (System.Data.SQLite.SQLiteConnection sqlcon = new System.Data.SQLite.SQLiteConnection(Tools.getDbcon()))
                 {
@@ -72,37 +73,13 @@ namespace SecureVaultV2
 
                                 if (LoginPasstxt.Password.ToString() == dr["Pass"].ToString())
                                 {
-                                    HandyControl.Controls.MessageBox.Success
-                                    ("Welcome, You have logged In ", "Happy to see you again");
+                                    
                                     // MessageBox.Show(getInfo.getLog().ToString());
                                     Tools.setLog(true,true);
                                     Tools.putCurrentPassword(LoginPasstxt.Password.ToString());
                                     Tools.SetRevertPassword(LoginPasstxt.Password.ToString());
-                                    Vault vault = new Vault();
-                                    var WelcomeWindow = Window.GetWindow(this);        // Getting Parent Window control                           
-                                    WelcomeWindow.Hide();                                   
-                                    //vault.ShowDialog();
-
-                                    vault.Opacity = 0;
-                                    vault.ShowDialog();
-
-
-
-                                    DoubleAnimation da = new DoubleAnimation();
-                                    da.From = 1;
-                                    da.To = 0;
-                                    da.Duration = new Duration(TimeSpan.FromSeconds(2));
-                                    da.AutoReverse = true;
-                                    da.RepeatBehavior = RepeatBehavior.Forever;
-                                    // da.RepeatBehavior=new RepeatBehavior(3);
-                                    vault.BeginAnimation(OpacityProperty, da);
-                                    //MessageBox.Show(getInfo.getLog().ToString());
-
-
-
-
-                                    Tools.setLog(false,true);                // changing  the login side
-                                    WelcomeWindow.Show();
+                                    CanLogin = true;
+                                  
 
                                
                                 }
@@ -127,6 +104,43 @@ namespace SecureVaultV2
                     }
                     sqlcon.Close();
 
+                 
+
+                  
+
+                }
+
+                HandyControl.Controls.MessageBox.Success
+                               ("DataBase Is Free Now ", " Lock Removed");
+               
+                if (CanLogin)
+                {
+                    HandyControl.Controls.MessageBox.Success("Welcome, You have logged In ", "Happy to see you again");
+                    Vault vault = new Vault();
+                    var WelcomeWindow = Window.GetWindow(this);        // Getting Parent Window control                           
+                    WelcomeWindow.Hide();
+                    //vault.ShowDialog();
+
+                    vault.Opacity = 0;
+                    vault.ShowDialog();
+
+
+
+                    DoubleAnimation da = new DoubleAnimation();
+                    da.From = 1;
+                    da.To = 0;
+                    da.Duration = new Duration(TimeSpan.FromSeconds(2));
+                    da.AutoReverse = true;
+                    da.RepeatBehavior = RepeatBehavior.Forever;
+                    // da.RepeatBehavior=new RepeatBehavior(3);
+                    vault.BeginAnimation(OpacityProperty, da);
+                    //MessageBox.Show(getInfo.getLog().ToString());
+
+
+
+
+                    Tools.setLog(false, true);                // changing  the login side
+                    WelcomeWindow.Show();
                 }
             }
         }

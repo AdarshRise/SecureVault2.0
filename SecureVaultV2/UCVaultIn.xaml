@@ -6,7 +6,7 @@
               xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:local="clr-namespace:SecureVaultV2"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Blue">
+             d:DesignHeight="450" d:DesignWidth="800" Background="SkyBlue">
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"/>

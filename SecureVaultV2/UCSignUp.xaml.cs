@@ -117,7 +117,21 @@ namespace SecureVaultV2
 
                             }
 
+
+
+                        query = "create table record (EmailID varchar(40) primary key,password varchar(40));";                                              //HandyControl.Controls.Growl.SuccessGlobal(com.ExecuteReader().ToString()); // outside window
+                        using (SQLiteCommand com = new System.Data.SQLite.SQLiteCommand(query, sqlcon))
+                        {
+                            // com = new System.Data.SQLite.SQLiteCommand(query, sqlcon);
+                            com.ExecuteNonQuery();
+
                         }
+
+
+
+
+
+                    }
                     
                 
                     sqlcon.Close();
