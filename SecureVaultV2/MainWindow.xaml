@@ -14,7 +14,7 @@
       
         Height="auto" 
         Width="auto"
-        SizeToContent="WidthAndHeight"  ResizeMode="NoResize" Icon="Assets/Vault/Vault-icon32.png" Opacity="0"
+        SizeToContent="WidthAndHeight"  ResizeMode="NoResize" Icon="Assets/Vault/Vault-icon32.png" Opacity="1"
            >
     <hc:Window.Resources>
 
@@ -335,7 +335,7 @@
                 </hc:Drawer>
                 -->
                 
-                <hc:Drawer Name="DrawerRight" MaskCanClose="True">
+                <hc:Drawer Name="DrawerRight" MaskCanClose="True" ShowMode="Push">
                     <Border  Width="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
                         <Border.Background>
 
@@ -371,20 +371,37 @@
                     </Border>
                 </hc:Drawer>
                 
-                <!--
-                <hc:Drawer Name="DrawerBottom" Dock="Bottom" ShowMask="False">
-                    <Border Background="{DynamicResource RegionBrush}" Height="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                
+                <hc:Drawer Name="DrawerBottom" Dock="Bottom" ShowMode="Press" ShowMask="True">
+                    <Border  Height="300" BorderThickness="0,4,0,0" BorderBrush="Black">
+                            <Border.Background>
+
+                                <LinearGradientBrush EndPoint="0.498,-0.43" StartPoint="0.516,1.355">
+                                    <GradientStop Color="Black" Offset="0.109"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+
+                            </Border.Background>
+                            <!--
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
+                          
+                         
                             <TextBlock Margin="10,0,0,0" Text="Header" Style="{StaticResource TextBlockTitle}" HorizontalAlignment="Left"/>
                             <Button CommandTarget="{Binding}" Command="hc:ControlCommands.Close" Grid.Row="0" HorizontalAlignment="Right" Foreground="{DynamicResource PrimaryTextBrush}" Style="{StaticResource ButtonIcon}" hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}"/>
-                        </Grid>
-                    </Border>
+                                <TextBlock Text="Something"></TextBlock>
+                             
+                                
+                            </Grid>
+                          -->
+                        
+                            <UserControl:UCSettings/>
+                        </Border>
                 </hc:Drawer>
-                -->
+                
                 
                 
             </hc:SimplePanel>
@@ -511,6 +528,8 @@
                         </ToggleButton>
                     </StackPanel>
 
+                    <!--
+                    
                             <Button Content="Settings" Name="SwitchTest" Click="SwitchTest_Click" Style="{StaticResource GlassAnime_But}">
                                 <Button.RenderTransform>
                                     <TransformGroup>
@@ -520,10 +539,21 @@
                                         <TranslateTransform/>
                                     </TransformGroup>
                                 </Button.RenderTransform>
-                            
+                        
                             </Button>
-                    
-                
+-->
+                            <ToggleButton Content="Settings" x:Name="Settings" Margin="20" Style="{StaticResource GlassAnime_TBut}"   IsChecked="{Binding IsOpen,ElementName=DrawerBottom}">
+                                <ToggleButton.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </ToggleButton.RenderTransform>
+                            </ToggleButton>
+                       
+
 
 
                         </StackPanel>

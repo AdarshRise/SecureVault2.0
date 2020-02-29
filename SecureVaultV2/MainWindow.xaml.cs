@@ -7,20 +7,53 @@ using HandyControl.Media.Animation;
 using HandyControl.Properties.Langs;
 using HandyControl.Interactivity;
 using System;
+using System.Threading;
+using AutoUpdaterDotNET;
 
 //using MessageBox = HandyControl.Controls.MessageBox;
 using MessageBoxResult = System.Windows.MessageBoxResult;
 using System.Windows.Media.Animation;
 
+
 namespace SecureVaultV2
 {
     public partial class MainWindow
     {
+        private void AutoUpdater_ApplicationExitEvent()
+        {
+            //string Text = @"Closing application...";
+            Thread.Sleep(5000);
+            System.Windows.Application.Current.Shutdown();
+        }
+
+
+        public void startupUpdate()
+        {
+
+            try
+            {
+                AutoUpdater.DownloadPath = Environment.CurrentDirectory;
+                AutoUpdater.Start("https://www.dropbox.com/s/7dl3swl17l2wt8o/update.xml?dl=1");
+               // AutoUpdater.ReportErrors = true;
+                AutoUpdater.ApplicationExitEvent += AutoUpdater_ApplicationExitEvent;
+                //MessageBox.Show("came here");
+            }
+            catch (Exception tr)
+            {
+                MessageBox.Show("Error in update, send this screenshot to developer:-" + tr.ToString());
+            }
+
+            GC.Collect();
+        }
+
+
         public MainWindow()
         {
+          
             InitializeComponent();
             ShowMe();
-            
+            startupUpdate();
+
         }
         public void ShowMe()
         {
@@ -77,14 +110,7 @@ namespace SecureVaultV2
             WindowState = System.Windows.WindowState.Minimized;
         }
 
-        private void SwitchTest_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Vault vault = new Vault();
-            this.Hide();
-            vault.ShowDialog();
-            this.Show();
-          
-            GC.Collect();
-        }
+
+       
     }
 }
