@@ -511,7 +511,7 @@
                         </ToggleButton>
                     </StackPanel>
 
-                            <Button Content="Switch" Name="SwitchTest" Click="SwitchTest_Click" Style="{StaticResource GlassAnime_But}">
+                            <Button Content="Settings" Name="SwitchTest" Click="SwitchTest_Click" Style="{StaticResource GlassAnime_But}">
                                 <Button.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>

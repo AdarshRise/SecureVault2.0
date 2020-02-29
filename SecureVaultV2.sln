@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureVault", "..\SecureVau
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WixSharp SecureVault2", "..\SecureVault\WixSharp SecureVault2\WixSharp SecureVault2.csproj", "{C49BD0CD-BEE8-40C7-837F-9519ECE4334F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Image2RGB", "..\Image2RGB\Image2RGB\Image2RGB.csproj", "{8E7DA246-847D-4BF3-8D6C-3F35D943350D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{C49BD0CD-BEE8-40C7-837F-9519ECE4334F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C49BD0CD-BEE8-40C7-837F-9519ECE4334F}.Release|x64.ActiveCfg = Release|Any CPU
 		{C49BD0CD-BEE8-40C7-837F-9519ECE4334F}.Release|x64.Build.0 = Release|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Debug|x64.Build.0 = Debug|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Release|x64.ActiveCfg = Release|Any CPU
+		{8E7DA246-847D-4BF3-8D6C-3F35D943350D}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
