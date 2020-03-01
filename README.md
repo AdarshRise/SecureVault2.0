@@ -1,14 +1,15 @@
 # SecureVault2.0
 Improved Version of SecureVault
 
-Offline Text Security Vault, save password, credit card number  or anything. 
+Offline Text Security Vault, save password, credit card number  or anything.
+Share Messages with a new self made password.
 
 
 <img align="left" src="https://github.com/AdarshRise/Secure-Vault/blob/master/SecureVault/Source/Vault.png" width=256>
 
 **Secure Vault is a simple and easy-to-use software to safeguard sensitive information.**
 
-Secure Vault is highly inspired by my old project PassProtect and it's specially well suited for Email Id Storage, Text Storage, Text Encryption and Decrytption, with Many Security layers.
+Secure Vault 2.0 is highly inspired by my old project PassProtect and it's specially well suited for Email Id Storage, Text Storage, Text Encryption and Decrytption, sharing text messsages , with Many Security layers.
 
 *NOTE for Early Adopters: Secure Vault is in Early Stage and May not Be Safe, Let Alone usable, But do Post your issues, this Project will improve over time.*
 
